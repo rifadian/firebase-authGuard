@@ -1,23 +1,27 @@
-<section class="vh-100" style="background: linear-gradient( rgb(170, 196, 255), rgb(238, 241, 255), white);">
+<section
+  class="vh-100"
+  style="
+    background: linear-gradient(rgb(170, 196, 255), rgb(238, 241, 255), white);
+  "
+>
   <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100 " >
+    <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-20">
-        <div class="card" style="border-radius: 1rem;">
+        <div class="card" style="border-radius: 1rem">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
               <img
                 src="assets/login5.jpg"
                 alt="login form"
                 class="img-fluid"
-                style="margin: 10%;"
-                
+                style="margin: 10%"
               />
             </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center" >
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
                 <form>
                   <div class="d-flex align-items-center mb-3 pb-1">
-                    <span class="h1 fw-bold mb-0" >WELCOME TO OUR COMPANY</span>
+                    <span class="h1 fw-bold mb-0">WELCOME TO OUR COMPANY</span>
                   </div>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
@@ -36,7 +40,10 @@
                             #userName
                             required
                           />
-                          <label class="form-label" for="formEmailUsername"></label>
+                          <label
+                            class="form-label"
+                            for="formEmailUsername"
+                          ></label>
                         </div>
 
                         <div class="form-outline mb-4">
@@ -64,40 +71,53 @@
                             "
                           >
                             Login
-                            
                           </button>
                         </div>
 
                         <div class="divider d-flex align-items-center my-4">
-                          <p class="text-center fw-bold mx-3 mb-0 text-muted w-100">
+                          <p
+                            class="text-center fw-bold mx-3 mb-0 text-muted w-100"
+                          >
                             OR
                           </p>
                         </div>
 
-                        
                         <!-- Calling GoogleAuth Api from AuthService -->
                         <div class="formGroup">
-                          <i class="btn btn-primary w-100" >
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="uil uil-google"></i>
-            Continue with Google
-          </button></i>
-        </div>
+                          <i class="btn btn-primary w-100">
+                            <button
+                              type="button"
+                              class="btn googleBtn"
+                              (click)="authService.GoogleAuth()"
+                            >
+                              <i class="uil uil-google"></i>
+                              Continue with Google
+                            </button></i
+                          >
+                        </div>
 
                         <div class="forgotPassword">
-                          <a class="small text-muted" routerLink="/forgot-password">
-                            <span >
-                              Forgot Password?</span
-                            >
+                          <a
+                            class="small text-muted"
+                            routerLink="/forgot-password"
+                          >
+                            <span> Forgot Password?</span>
                           </a>
                         </div>
                       </div>
 
                       <div class="redirectToLogin">
                         <p class="mb-5 pb-lg-2" style="color: #393f81">
-                          <span>Don't have an account?<span>
-                            <a class="small text-muted redirect" routerLink="/register-user">
-                            Register here.</a></span></span>
+                          <span
+                            >Don't have an account?<span>
+                              <a
+                                class="small text-muted redirect"
+                                routerLink="/register-user"
+                              >
+                                Register here.</a
+                              ></span
+                            ></span
+                          >
                         </p>
                       </div>
                     </div>
