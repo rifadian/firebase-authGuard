@@ -5,3 +5,8 @@ li,ul{
     width: 100%;
     
 }
+
+.nav-link{
+    background-color: rgb(170, 196, 255);
+}
+
