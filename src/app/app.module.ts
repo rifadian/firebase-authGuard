@@ -17,7 +17,15 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AuthService } from './shared/services/auth.service';
+import { AddStudentComponent } from './crud/add-student/add-student.component';
+import { EditStudentComponent } from './crud/edit-student/edit-student.component';
+import { StudentListComponent } from './crud/student-list/student-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
+// Import below modules for NGX Toastr
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +33,10 @@ import { AuthService } from './shared/services/auth.service';
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    AddStudentComponent,
+    EditStudentComponent,
+    StudentListComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +46,10 @@ import { AuthService } from './shared/services/auth.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added,
+    ReactiveFormsModule,
+    NgxPaginationModule  // Include it in imports array
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

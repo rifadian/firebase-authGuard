@@ -1,3 +1,5 @@
+
+
 <!-- Top navigation -->
 <section
   class="vh-100"
@@ -17,8 +19,15 @@
         <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <!-- <li class="nav-item"> -->
-          <a class="nav-link active" href="#!">
+          <a class="nav-link active" routerLink="/dashboard">
             <i class="uil uil-user-circle"></i>User Profile
+          </a>
+          
+          <a class="nav-link active" routerLink="/register-student">
+            <i class="uil uil-user-plus"></i>Add Student
+          </a>
+          <a class="nav-link active" routerLink="/view-students">
+            <i class="uil uil-users-alt"></i>Student List
           </a>
           <!-- </li> -->
           <!-- Calling SignOut() Api from AuthService -->
@@ -32,9 +41,9 @@
         </div>
       </nav>
       <!-- Main content -->
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
         <div class="inner-adjust">
-          <div class="pt-3 pb-2 mb-3 border-bottom ">
+          <div class="pt-3 pb-2 mb-3 border-bottom">
            
             <h1 class="h2">User Profile</h1>
           </div>
