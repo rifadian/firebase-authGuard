@@ -45,4 +45,9 @@ export class CrudService {
     this.studentRef = this.db.object('students-list/' + id);
     this.studentRef.remove();
   }
+
+  // signOut(id: string) {
+  //   this.studentRef = this.db.object('students-list/' + id);
+  //   this.studentRef.remove();
+  // }
 }

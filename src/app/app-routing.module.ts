@@ -10,17 +10,32 @@ import { StudentListComponent } from '../app/crud/student-list/student-list.comp
 import { EditStudentComponent } from '../app/crud/edit-student/edit-student.component';
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
+import { LayoutComponent } from './components/layout/layout.component';
 const routes: Routes = [
+  
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent},
   // { path: '', redirectTo: '/register-student', pathMatch: 'full' },
-  { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'register-student', component: AddStudentComponent },
-  { path: 'view-students', component: StudentListComponent },
-  { path: 'edit-student/:id', component: EditStudentComponent }
+
+    //CRUD ROUTE
+    { 
+      path: '', 
+      component : LayoutComponent,
+      canActivate: [AuthGuard],
+      data: {
+        title: 'home',
+      },
+      children: [
+        { path: 'dashboard', component: DashboardComponent },
+        { path: 'register-student', component: AddStudentComponent },
+        { path: 'view-students', component: StudentListComponent },
+        { path: 'edit-student/:id', component: EditStudentComponent },
+      ]
+  
+    },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,24 @@
+.btn-outline-primary{
+    color: white;
+    border: none;
+}
+
+.btn-outline-primary:hover{
+    background-color:rgb(170, 196, 255);
+}
+
+/* .sidebar{
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    padding-top: 100px;
+    width: 100%;
+    padding-right: 0;
+}
+
+.sidebar-sticky{
+    position: absolute;
+    width: 100%;
+
+} */

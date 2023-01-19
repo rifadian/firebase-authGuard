@@ -6,9 +6,24 @@
     
 } */
 
+.sidebar{
+    background-color: #232a31 !important;
+    text-align: center;
+    padding-right: 0px;
+}
+
+sidebar-link{
+    background: red;
+}
+
+.inner-adjust {
+    padding: 5px 5px;
+}
+
+
 .nav-link{
-    color: black;
-    background-position: 10px;
+    color: red;
+    /* background-position: 10px; */
 }
 
 

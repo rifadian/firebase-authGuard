@@ -7,12 +7,14 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { CrudService } from '../crud.service';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   userData: any; // Save logged in user data
   constructor(
+    public crudApi: CrudService,
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
@@ -123,9 +125,20 @@ export class AuthService {
   }
   // Sign out
   SignOut() {
+    if (window.confirm('Are you sure want to exit?')){
+    }
+     else
+      {return}
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['sign-in']);
     });
   }
+
+  // signOut(student: { $key: string; firstName: string; }) {
+  //   if (window.confirm('Are sure you want to delete this student ?')) { 
+
+  //     this.router.navigate(['sign-in']);
+  //   }
+  // }
 }

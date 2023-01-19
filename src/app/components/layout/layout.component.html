@@ -1,0 +1,93 @@
+<!-- Top navigation -->
+<section
+  class="vh-100"
+  style="
+    background: linear-gradient(rgb(170, 196, 255), rgb(238, 241, 255), white);
+  "
+>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/dashboard">
+      <span class="dasboard-text"><i class="uil uil-estate"></i>Dashboard</span>
+    </a>
+    <div class="image">
+        <img src="assets/student-removebg-preview.png"
+        style="width: 50px; height: 50px"
+        >  <span style="color: white">studentApp</span>
+    </div>
+    <div style="float: right">
+      <div class="row" *ngIf="authService.userData as user">
+        <div class="col-md-4">
+          <div class="media">
+            <img
+              class="align-self-start img-fluid rounded-circle"
+              src="{{
+                user.photoURL ? user.photoURL : '/assets/dummy-user.png'
+              }}"
+              alt="{{ user.displayName }}"
+              style="width: 40px; height: 40px"
+            />
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="mdia-body">
+            <span style="color: white">{{
+              user.displayName ? user.displayName : "User"
+            }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+  <!-- Sidebar navigation -->
+  <div class=" sidebar-nav">
+    
+    <div class="row">
+      <nav class="col-md-2 d-md-block sidebar" style="padding-top: 30px">
+        <div class="sidebar sidebar-sticky ">
+          <ul class="nav flex-column">
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              routerLink="/register-student"
+            >
+              <i class="uil uil-user-plus"></i>Add Student
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              routerLink="/view-students"
+            >
+              <i class="uil uil-users-alt"></i>Student List
+            </button>
+            <!-- </li> -->
+            <!-- Calling SignOut() Api from AuthService -->
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                (click)="authService.SignOut()"
+              >
+                <i class="uil uil-sign-in-alt"></i>Log out
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+</section>
