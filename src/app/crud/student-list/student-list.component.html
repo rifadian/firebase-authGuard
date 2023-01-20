@@ -13,9 +13,12 @@
           </a> -->
   </div>
   <div class="pricing-header mx-auto">
-    <div class="no-data text-center" *ngIf="preLoader">
+    <div class="spinner-border" role="status" *ngIf="preLoader">
+      <span class="sr-only"></span>
+  </div>
+    <!-- <div class="no-data text-center" *ngIf="preLoader">
       <img src="assets/preloader.gif" class="preloader-icon" alt="No student" />
-    </div>
+    </div> -->
     <div class="no-data text-center" *ngIf="noData">
       <img src="assets/no-student.svg" class="nodata-msg" alt="No student" />
       <p class="nodata-msg">No student added yet!</p>
@@ -66,6 +69,8 @@
         </tbody>
       </table>
     </div>
+    <div pagination>
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
   </div>
 </div>
